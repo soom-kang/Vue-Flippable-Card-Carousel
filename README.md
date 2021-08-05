@@ -1,14 +1,16 @@
-<h1 align="center"> 
-Vue Flippable Card Carousel
-</h1>
-
-<h3 align="center">
-View Demo
+<h3 align="center"> 
+  Vue Flippable Card Carousel
 </h3>
+
+<h4 align="center">
+  <a href="https://vue-flippable-card-carousel.vercel.app/">View Demo</a>
+</h4>
 
 ---
 
 ## About The Project
+
+![carousel-introduction](https://user-images.githubusercontent.com/4216651/128390005-f5d2c529-9ad7-4aa9-8d6e-1a09942db935.gif)
 
 1. There are `App` and child component `FlippableCard`
 
@@ -65,6 +67,12 @@ npm install --global yarn
     yarn serve
     ```
 
+4.  Build the package
+
+    ```sh
+    yarn build
+    ```
+
 ## Project Tree
 
 ```js
@@ -86,6 +94,7 @@ npm install --global yarn
 ├── tailwind.config.js
 ├── tsconfig.json
 ├── package.json
+├── vue.config.js
 └── ...
 ```
 
@@ -123,14 +132,14 @@ npm install --global yarn
 
 ## ETC
 
-This project was obtimized & tested in `Chrome`.
+This project is obtimized & tested in `Chrome`.
 
 ---
 
-<h2 align="center">
-Developed by SOOM
-
-</h2>
 <h3 align="center">
-<a href="https://soomlog.vercel.app/">soomlog.vercel.app</a>
+Developed by SOOM
 </h3>
+
+<h4 align="center">
+<a href="https://soomlog.vercel.app/">soomlog.vercel.app</a>
+</h4>
