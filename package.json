@@ -1,27 +1,35 @@
 {
-  "name": "vue-flipable-card-carousel",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "typescript": "~4.1.5",
-    "vue-template-compiler": "^2.6.11"
-  }
+	"name": "vue-flipable-card-carousel",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint"
+	},
+	"dependencies": {
+		"core-js": "^3.6.5",
+		"vue": "^2.6.11"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss7-compat": "^2.2.4",
+		"@typescript-eslint/eslint-plugin": "^4.18.0",
+		"@typescript-eslint/parser": "^4.18.0",
+		"@vue/cli-plugin-babel": "~4.5.0",
+		"@vue/cli-plugin-eslint": "~4.5.0",
+		"@vue/cli-plugin-typescript": "~4.5.0",
+		"@vue/cli-service": "~4.5.0",
+		"@vue/eslint-config-typescript": "^7.0.0",
+		"autoprefixer": "^9",
+		"eslint": "^6.7.2",
+		"eslint-plugin-vue": "^6.2.2",
+		"node-sass": "^6.0.1",
+		"sass": "~1.32.0",
+		"sass-loader": "^10",
+		"postcss": "^7",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat",
+		"typescript": "~4.1.5",
+		"vue-svg-loader": "^0.16.0",
+		"vue-template-compiler": "^2.6.14"
+	}
 }
