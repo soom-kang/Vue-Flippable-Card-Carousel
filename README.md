@@ -8,9 +8,9 @@
 
 ---
 
-## About The Project
+<img src="https://user-images.githubusercontent.com/4216651/128390005-f5d2c529-9ad7-4aa9-8d6e-1a09942db935.gif" alt="carousel-introduction" width="100%"/>
 
-![carousel-introduction](https://user-images.githubusercontent.com/4216651/128390005-f5d2c529-9ad7-4aa9-8d6e-1a09942db935.gif)
+## About The Project
 
 1. There are `App` and child component `FlippableCard`
 
@@ -141,5 +141,5 @@ Developed by SOOM
 </h3>
 
 <h4 align="center">
-<a href="https://soomlog.vercel.app/">soomlog.vercel.app</a>
+<a href="https://soomlog.vercel.app/">Soomlog.vercel.app</a>
 </h4>

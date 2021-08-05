@@ -79,28 +79,23 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 		isSliding: false as boolean,
 		flippableCardInfos: [
 			{
-				frontImage: 'https://picsum.photos/320',
-				backIamge: 'https://picsum.photos/321/470',
+				frontImage: 'https://picsum.photos/320?random=1',
 				selectedStatus: ['prev-second'],
 			},
 			{
-				frontImage: 'https://picsum.photos/400',
-				backIamge: 'https://via.placeholder.com/320x470',
+				frontImage: 'https://picsum.photos/320?random=2',
 				selectedStatus: ['prev'],
 			},
 			{
-				frontImage: 'https://picsum.photos/355',
-				backIamge: 'https://picsum.photos/323/470',
+				frontImage: 'https://picsum.photos/320?random=3',
 				selectedStatus: ['selected'],
 			},
 			{
-				frontImage: 'https://picsum.photos/319',
-				backIamge: 'https://picsum.photos/280/475',
+				frontImage: 'https://picsum.photos/320?random=4',
 				selectedStatus: ['next'],
 			},
 			{
-				frontImage: 'https://picsum.photos/350',
-				backIamge: 'https://picsum.photos/359/477',
+				frontImage: 'https://picsum.photos/320?random=5',
 				selectedStatus: ['next-second'],
 			},
 		],
@@ -230,14 +225,12 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 				background: #1D222B;
 				color: #fff;
 				text-shadow:
-					0 0 7px #B4F8C8,
-					0 0 10px #B4F8C8,
-					0 0 21px #A0E7E5,
-					0 0 42px #FBE7C6,
-					0 0 82px #FFAEBC;
+						0 0 7px #bc13fe,
+						0 0 10px #B4F8C8,
+						0 0 21px #A0E7E5
 			`;
 
-			console.info('%c  🐳  github.com/VannsKang  ', consoleStyle);
+			console.info('%c  🍩  Github.com/VannsKang  ', consoleStyle);
 		},
 	},
 });

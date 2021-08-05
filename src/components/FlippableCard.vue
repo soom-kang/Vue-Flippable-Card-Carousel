@@ -101,24 +101,24 @@ $primary-blue: #08a0f7;
 	text-shadow: 0 0 7px $primary-blue, 0 0 10px $primary-blue, 0 0 21px $primary-blue,
 		0 0 42px $primary-blue;
 	animation: flicker 2s infinite alternate;
+}
 
-	@keyframes flicker {
-		0%,
-		18%,
-		22%,
-		25%,
-		53%,
-		57%,
-		100% {
-			text-shadow: 0 0 4px $primary-blue, 0 0 11px $primary-blue, 0 0 19px $primary-blue,
-				0 0 40px $primary-blue;
-		}
+@keyframes flicker {
+	0%,
+	18%,
+	22%,
+	25%,
+	53%,
+	57%,
+	100% {
+		text-shadow: 0 0 4px $primary-blue, 0 0 11px $primary-blue, 0 0 19px $primary-blue,
+			0 0 40px $primary-blue;
+	}
 
-		20%,
-		24%,
-		55% {
-			text-shadow: none;
-		}
+	20%,
+	24%,
+	55% {
+		text-shadow: none;
 	}
 }
 
