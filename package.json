@@ -9,7 +9,8 @@
 	},
 	"dependencies": {
 		"core-js": "^3.6.5",
-		"vue": "^2.6.11"
+		"vue": "^2.6.11",
+		"vue2-touch-events": "^3.2.2"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss7-compat": "^2.2.4",
@@ -24,9 +25,9 @@
 		"eslint": "^6.7.2",
 		"eslint-plugin-vue": "^6.2.2",
 		"node-sass": "^6.0.1",
+		"postcss": "^7",
 		"sass": "~1.32.0",
 		"sass-loader": "^10",
-		"postcss": "^7",
 		"tailwindcss": "npm:@tailwindcss/postcss7-compat",
 		"typescript": "~4.1.5",
 		"vue-svg-loader": "^0.16.0",
