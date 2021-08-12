@@ -18,14 +18,16 @@
 
    - Rotate the card:
 
-     - Click the arrow icons
-     - Click the next or previous card face
+     - Click or Tap(Mobile) the arrow icons
+     - Click or Tap(Mobile) the next or previous card face
      - Use key `ArrowRgiht` and `ArrowLeft`
+     - Slide left or right on the carousel area (mobile)
 
-   - Flip the card:
+- Flip the card:
 
-     - Mouse over the card
-     - Use key `ArrowUp` and `ArrowDown`
+  - Mouse over the center card
+  - Use key `ArrowUp` and `ArrowDown`
+  - Tap the center card & tap outside the center card (Mobile)
 
 ### Built With
 

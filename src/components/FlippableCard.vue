@@ -2,13 +2,16 @@
 	<div
 		@click="slideToSelectedCard"
 		id="flippable-carousel-flip-card"
-		:class="`absolute ${card.selectedStatus[0]} cursor-pointer`"
+		:class="`absolute ${card.selectedStatus[0]} cursor-pointer transition-all duration-1000`"
 	>
 		<div
 			id="flippable-carousel-flip-card-front"
-			class="bg-gradient-to-r to-gray-900 from-blue-900 overflow-hidden shadow-2xl absolute card-transition"
+			class="bg-gradient-to-r to-gray-900 from-blue-900 overflow-hidden shadow-2xl absolute transition-all duration-1000"
 		>
-			<figure id="flippable-carousel-flip-card-front-image" class="overflow-hidden card-transition">
+			<figure
+				id="flippable-carousel-flip-card-front-image"
+				class="overflow-hidden transition-all duration-1000"
+			>
 				<img
 					:src="card.frontImage"
 					alt="flippable-carousel-flip-card-front-image"
@@ -18,11 +21,14 @@
 		</div>
 		<div
 			id="flippable-carousel-flip-card-back"
-			class="card-flip-back bg-gradient-to-r from-blue-900 to-gray-900 overflow-hidden shadow-2xl card-transition"
+			class="card-flip-back bg-gradient-to-r from-blue-900 to-gray-900 overflow-hidden shadow-2xl transition-all duration-1000"
 		>
 			<div class="h-full">
 				<div class="h-full flex justify-center items-center">
-					<div id="flippable-carousel-flip-card-back-index" class="text-7xl font-bold neon-text">
+					<div
+						id="flippable-carousel-flip-card-back-index"
+						class="text-2xl lg:text-7xl font-bold neon-text"
+					>
 						{{ `0${cardIndex + 1} FlipCard` }}
 					</div>
 				</div>
@@ -59,11 +65,25 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 /* variable */
+$desktop-width: 760px;
+$mobile-size: 200px;
 $card-size: 400px;
 $image-size: 400px;
 $primary-blue: #08a0f7;
 
 /* mixin */
+@mixin mobile {
+	@media (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
 @mixin cardResizer($arg...) {
 	#flippable-carousel-flip-card {
 		&-front {
@@ -78,20 +98,6 @@ $primary-blue: #08a0f7;
 			width: #{nth($arg, 2)};
 			height: #{nth($arg, 2)};
 		}
-	}
-
-	@if length($arg) == 3 {
-		opacity: #{nth($arg, 3)};
-	}
-}
-
-@mixin cardPosition($arg...) {
-	left: #{nth($arg, 1)};
-	transform: translateY(#{nth($arg, 2)}) translateX(#{nth($arg, 3)});
-	transition: 1s;
-
-	@if length($arg) == 4 {
-		z-index: #{nth($arg, 4)};
 	}
 }
 
@@ -132,57 +138,71 @@ $primary-blue: #08a0f7;
 	}
 }
 
-.card-transition {
-	transition: 1s;
-}
-
 /* styles */
 #flippable-carousel-flip-card {
 	perspective: 1000px;
+	@apply opacity-100;
 
-	@include cardResizer($image-size, $card-size, 1);
+	&-front {
+		&-image {
+			@apply w-card-mobile lg:w-card-web h-card-mobile lg:h-card-web;
+		}
+	}
 
 	&-back {
 		&-index {
-			@apply text-7xl;
 			font-family: 'Vibur', cursive;
 		}
 	}
 
 	&-front,
 	&-back {
+		@apply w-card-mobile h-card-mobile lg:w-card-web lg:h-card-web;
+
 		backface-visibility: hidden;
 		transform-style: preserve-3d;
 	}
 
 	&.selected {
-		@include cardPosition(50%, 0px, -50%, 10);
+		@apply left-1/2 transform translate-y-0 -translate-x-1/2 z-20;
 	}
 
 	&.prev {
-		@include cardPosition(30%, 0px, -100%, 5);
+		@apply left-1/3 transform translate-y-0 -translate-x-full;
 	}
 
 	&.next {
-		@include cardPosition(70%, 0px, -0%, 5);
+		@apply left-2/3 transform translate-y-0 -translate-x-0;
 	}
 
 	&.prev,
 	&.next {
-		@include cardResizer($image-size * 0.8, $card-size * 0.8);
+		@apply z-10;
+		@include mobile {
+			@include cardResizer($mobile-size * 0.8, $mobile-size * 0.8);
+		}
+		@include desktop {
+			@include cardResizer($image-size * 0.8, $card-size * 0.8);
+		}
 	}
 
 	&.prev-second {
-		@include cardPosition(30%, 0, -100%, -1);
+		@apply left-1/3 transform translate-y-0 -translate-x-full;
 	}
 
 	&.next-second {
-		@include cardPosition(70%, 0, -0%, -1);
+		@apply left-2/3 transform translate-y-0 -translate-x-0;
 	}
 
 	&.prev-second,
 	&.next-second {
-		@include cardResizer($image-size * 0.6, $card-size * 0.6, 0);
+		@apply opacity-0 z-0;
+		@include mobile {
+			@include cardResizer($mobile-size * 0.6, $mobile-size * 0.6);
+		}
+		@include desktop {
+			@include cardResizer($image-size * 0.6, $card-size * 0.6);
+		}
 	}
 }
 </style>

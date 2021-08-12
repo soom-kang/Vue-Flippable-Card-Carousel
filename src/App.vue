@@ -7,7 +7,7 @@
 				id="flippable-carousel-title"
 				class="absolute left-1/2 transform -translate-x-1/2 top-28"
 			>
-				<div class="text-7xl neon-title whitespace-nowrap">
+				<div class="text-3xl lg:text-7xl neon-title whitespace-nowrap">
 					Flippable Card Carousel
 				</div>
 			</div>
@@ -18,7 +18,10 @@
 				class="w-full h-screen flex items-center"
 			>
 				<!-- SECTION cards -->
-				<div id="flippable-carousel-flip" class="w-full absolute overflow-hidden flex items-center">
+				<div
+					id="flippable-carousel-flip"
+					class="w-full absolute overflow-hidden flex items-center mt-24"
+				>
 					<FlippableCard
 						v-for="(card, cardIndex) in flippableCardInfos"
 						:key="cardIndex"
@@ -31,7 +34,9 @@
 				<!-- SECTION navigation -->
 				<div
 					id="flippable-carousel-navigator"
-					class="absolute left-1/2 transform -translate-x-1/2 z-10 flex items-center"
+					class="absolute left-1/2 transform -translate-x-1/2 z-50 flex items-center h-card-mobile lg:h-card-web mt-24"
+					v-touch:swipe.lefe="(e) => slideToSelectedCard(e, 'NEXT')"
+					v-touch:swipe.right="(e) => slideToSelectedCard(e, 'PREV')"
 				>
 					<div :class="`w-full justify-between ${isSliding ? 'hidden' : 'flex'}`">
 						<button @click="(e) => slideToSelectedCard(e, 'PREV')" class="w-6 transform rotate-180">
@@ -43,9 +48,11 @@
 					</div>
 					<div
 						id="flippable-carousel-navigator-fakeface"
-						class="absolute left-1/2 transform -translate-x-1/2"
+						class="absolute left-1/2 transform -translate-x-1/2 w-card-mobile h-card-mobile lg:w-card-web lg:h-card-web"
 						@mouseenter.prevent="() => flipCardHandler('ENTER')"
 						@mouseleave.prevent="() => flipCardHandler('LEAVE')"
+						v-touch:tap="() => flipCardHandler('ENTER')"
+						v-touch:end="() => flipCardHandler('LEAVE')"
 					></div>
 				</div>
 			</div>
@@ -73,6 +80,13 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 	components: {
 		CarouselArrow,
 		FlippableCard,
+	},
+
+	computed: {
+		// for responsive design
+		isBrowser() {
+			return screen.width > 760;
+		},
 	},
 
 	data: () => ({
@@ -115,7 +129,7 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 	},
 
 	methods: {
-		slideToSelectedCard(e: MouseEvent | null, clickedButton: string) {
+		slideToSelectedCard(e: MouseEvent | PointerEvent | null, clickedButton: string) {
 			// flipback
 			this.flipCardHandler('LEAVE');
 
@@ -237,7 +251,23 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 </script>
 
 <style lang="scss" scoped>
+/* variable */
+$desktop-width: 760px;
 $card-size: 400px;
+$mobile-size: 200px;
+
+/* mixin */
+@mixin mobile {
+	@media (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
 
 .neon-title {
 	text-shadow: 0 0 3vw #2356ff;
@@ -266,16 +296,20 @@ $card-size: 400px;
 	}
 
 	&-flip {
-		height: $card-size * 1.4;
+		@include mobile {
+			height: $card-size;
+		}
+		@include desktop {
+			height: $card-size * 1.4;
+		}
 	}
 
 	&-navigator {
-		height: $card-size;
-		width: $card-size * 1.3;
-
-		&-fakeface {
-			width: $card-size;
-			height: $card-size;
+		@include mobile {
+			width: $mobile-size * 1.3;
+		}
+		@include desktop {
+			width: $card-size * 1.3;
 		}
 	}
 }
