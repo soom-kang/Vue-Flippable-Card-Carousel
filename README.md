@@ -8,7 +8,11 @@
 
 ---
 
-<img src="https://user-images.githubusercontent.com/4216651/128390005-f5d2c529-9ad7-4aa9-8d6e-1a09942db935.gif" alt="carousel-introduction" width="100%"/>
+<img src="https://user-images.githubusercontent.com/4216651/129351493-eb6574d0-e57d-43ae-927e-840820db3ef1.png" alt="carousel-introduction" width="100%"/>
+
+|                                                                        Web                                                                         |                                                                       Mobile                                                                        |
+| :------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/4216651/128390005-f5d2c529-9ad7-4aa9-8d6e-1a09942db935.gif" alt="carousel-web" width="1050" /> | <img src="https://user-images.githubusercontent.com/4216651/129352181-39c0e0ff-d652-467c-b534-9dfb4cdeaf4f.gif" alt="carousel-mobile" width="300"/> |
 
 ## About The Project
 
@@ -21,7 +25,7 @@
      - Click or Tap(Mobile) the arrow icons
      - Click or Tap(Mobile) the next or previous card face
      - Use key `ArrowRgiht` and `ArrowLeft`
-     - Slide left or right on the carousel area (mobile)
+     - Slide left or right on the carousel area (Mobile)
 
 - Flip the card:
 
