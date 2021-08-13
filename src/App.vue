@@ -82,13 +82,6 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 		FlippableCard,
 	},
 
-	computed: {
-		// for responsive design
-		isBrowser() {
-			return screen.width > 760;
-		},
-	},
-
 	data: () => ({
 		isSliding: false as boolean,
 		flippableCardInfos: [
