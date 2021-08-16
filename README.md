@@ -90,6 +90,7 @@ npm install --global yarn
 │   │   ├── index.ts
 │   │   └── FlippableCard.vue
 │   ├── styles/
+│   │   ├── mixin.scss
 │   │   └── index.css
 │   ├── typings/
 │   │   └── index.ts
