@@ -244,23 +244,7 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 </script>
 
 <style lang="scss" scoped>
-/* variable */
-$desktop-width: 1024px;
-$card-size: 400px;
-$mobile-size: 200px;
-
-/* mixin */
-@mixin mobile {
-	@media (max-width: #{$desktop-width - 1px}) {
-		@content;
-	}
-}
-
-@mixin desktop {
-	@media (min-width: #{$desktop-width}) {
-		@content;
-	}
-}
+@import '@/styles/mixin.scss';
 
 .neon-title {
 	text-shadow: 0 0 3vw #2356ff;
@@ -269,18 +253,6 @@ $mobile-size: 200px;
 	-moz-animation: flux 2s linear infinite;
 	-webkit-animation: flux 2s linear infinite;
 	-o-animation: flux 2s linear infinite;
-}
-
-@keyframes flux {
-	0%,
-	100% {
-		text-shadow: 0 0 1vw #1041ff;
-		color: #28d7fe;
-	}
-	50% {
-		text-shadow: 0 0 0.5vw #082180;
-		color: #146c80;
-	}
 }
 
 #flippable-carousel {
