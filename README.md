@@ -16,6 +16,8 @@
 
 ## About The Project
 
+This project is a documentation of the study to develop the Carousel style visual interaction.
+
 1. There are `App` and child component `FlippableCard`
 
 2. You can control the `Flippable Card Carousel` in various way
@@ -139,7 +141,7 @@ npm install --global yarn
 
 ## ETC
 
-This project is obtimized & tested in `Chrome`.
+This project is optimized & tested in `Chrome`.
 
 ---
 
@@ -148,5 +150,5 @@ Developed by SOOM
 </h3>
 
 <h4 align="center">
-<a href="https://soomlog.vercel.app/">Soomlog.vercel.app</a>
+<a href="https://www.soomlog.tech/">Soomlog.tech</a>
 </h4>
