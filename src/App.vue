@@ -1,15 +1,13 @@
 <template>
 	<section
-		class="w-full h-screen flex justify-center items-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 "
+		class="w-full h-screen flex justify-center items-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
 	>
 		<article class="w-full h-screen">
 			<div
 				id="flippable-carousel-title"
 				class="absolute left-1/2 transform -translate-x-1/2 top-28"
 			>
-				<div class="text-3xl lg:text-7xl neon-title whitespace-nowrap">
-					Flippable Card Carousel
-				</div>
+				<div class="text-3xl lg:text-7xl neon-title whitespace-nowrap">Flippable Card Carousel</div>
 			</div>
 			<div
 				v-if="flippableCardInfos && flippableCardInfos.length"
@@ -35,15 +33,15 @@
 				<div
 					id="flippable-carousel-navigator"
 					class="absolute left-1/2 transform -translate-x-1/2 z-50 flex items-center h-card-mobile lg:h-card-web mt-24"
-					v-touch:swipe.lefe="(e) => slideToSelectedCard(e, 'NEXT')"
-					v-touch:swipe.right="(e) => slideToSelectedCard(e, 'PREV')"
+					v-touch:swipe.lefe="($e) => slideToSelectedCard($e, 'NEXT')"
+					v-touch:swipe.right="($e) => slideToSelectedCard($e, 'PREV')"
 				>
 					<div :class="`w-full justify-between ${isSliding ? 'hidden' : 'flex'}`">
-						<button @click="(e) => slideToSelectedCard(e, 'PREV')" class="w-6 transform rotate-180">
-							<CarouselArrow />
+						<button @click="($e) => slideToSelectedCard($e, 'PREV')" class="w-6 transform">
+							<font-awesome-icon icon="fa-solid fa-chevron-left" size="2x" color="#fff" beat />
 						</button>
-						<button @click="(e) => slideToSelectedCard(e, 'NEXT')" class="w-6">
-							<CarouselArrow />
+						<button @click="($e) => slideToSelectedCard($e, 'NEXT')" class="w-6">
+							<font-awesome-icon icon="fa-solid fa-chevron-right" size="2x" color="#fff" beat />
 						</button>
 					</div>
 					<div
@@ -63,12 +61,11 @@
 <script lang="ts">
 import Vue, { VueConstructor } from 'vue';
 import { FlippableCard } from '@/components';
-import { CarouselArrow } from '@/assets';
-import { FlippableCardInfo, NullableElement } from '@/typings';
+import { FlippableCardInfo, NullableElement } from '@/types';
 
 interface LocalTypes {
 	flippableCardInfos: FlippableCardInfo[];
-	slideToSelectedCard: () => void;
+	slideToSelectedCard: ($e: MouseEvent | PointerEvent | null, status: string) => void;
 	flipCardHandler: () => void;
 	slideCardByKey: () => void;
 	hideNavigationWhileSliding: () => void;
@@ -78,7 +75,6 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 	name: 'App',
 
 	components: {
-		CarouselArrow,
 		FlippableCard,
 	},
 
@@ -171,7 +167,7 @@ export default (Vue as VueConstructor<Vue & LocalTypes>).extend({
 				prevSecondCard?.classList.remove(...cardConditions);
 				prevSecondCard?.classList.add('prev-second');
 			} catch (error) {
-				console.error(error.message);
+				console.error((error as Error).message);
 			}
 		},
 

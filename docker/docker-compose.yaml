@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app-frontend:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+      args:
+        - nodeVersion=${NODE_VERSION}
+        - devPort=${DEV_PORT}
+        - author=${AUTHOR}
+    container_name: vue_flippable_c
+    ports:
+      - ${DEV_PORT}:${DEV_PORT}
+    volumes:
+      - ../src:/app/src
+    stdin_open: true
+    tty: true

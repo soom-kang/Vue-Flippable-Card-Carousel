@@ -1,0 +1,8 @@
+@import './modules/normalize.scss';
+@import './modules/reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
