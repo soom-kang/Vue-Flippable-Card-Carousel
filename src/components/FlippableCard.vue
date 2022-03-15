@@ -39,7 +39,7 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import { FlippableCardInfo } from '@/typings';
+import { FlippableCardInfo } from '@/types';
 
 export default Vue.extend({
 	name: 'FlippableCard',

@@ -1,6 +1,7 @@
 module.exports = {
-	purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-	darkMode: false, // or 'media' or 'class'
+	mode: 'jit',
+	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+	darkMode: false,
 	theme: {
 		extend: {
 			width: {
@@ -12,9 +13,6 @@ module.exports = {
 				'card-mobile': '200px',
 			},
 		},
-	},
-	variants: {
-		extend: {},
 	},
 	plugins: [],
 };

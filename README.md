@@ -18,44 +18,43 @@
 
 This project is a documentation of the study to develop the Carousel style visual interaction.
 
-1. There are `App` and child component `FlippableCard`
-
-2. You can control the `Flippable Card Carousel` in various way
-
-   - Rotate the card:
-
-     - Click or Tap(Mobile) the arrow icons
-     - Click or Tap(Mobile) the next or previous card face
-     - Use key `ArrowRgiht` and `ArrowLeft`
-     - Slide left or right on the carousel area (Mobile)
-
-- Flip the card:
-
-  - Mouse over the center card
-  - Use key `ArrowUp` and `ArrowDown`
-  - Tap the center card & tap outside the center card (Mobile)
+<p>
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue%2Ejs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=TypeScript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=flat-square&logo=Tailwind%20CSS&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Font%20Awesome-528DD7?style=flat-square&logo=Font%20Awesome&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Yarn-2C8EBB?style=flat-square&logo=Yarn&logoColor=white"/>
+</p>
 
 ### Built With
 
 - Vue
-
 - TypeScript
-
 - Tailwind CSS
-
 - SCSS
+- Vue2 Touch Event
+- Fontawesome
+- Yarn
 
 ## Getting Started
 
 ### Prerequisites
 
-Before you start, install `Yarn` package to global.
+- Before you start, install `Yarn` package to global.
 
-```sh
-npm install --global yarn
-```
+  ```sh
+  npm install --global yarn
+  ```
+
+- Docker install required
+
+  https://www.docker.com/get-started
 
 ### Installation
+
+#### Local
 
 1.  Clone the repo
 
@@ -80,6 +79,33 @@ npm install --global yarn
     ```sh
     yarn build
     ```
+
+#### Docker
+
+1.  Run the Docker inside `./docker` folder
+
+    ```sh
+    docker-compose up
+    ```
+
+## Introduction
+
+1. There are `App` and child component `FlippableCard`
+
+2. You can control the `Flippable Card Carousel` in various way
+
+   - Rotate the card:
+
+     - Click or Tap(Mobile) the arrow icons
+     - Click or Tap(Mobile) the next or previous card face
+     - Use key `ArrowRgiht` and `ArrowLeft`
+     - Slide left or right on the carousel area (Mobile)
+
+- Flip the card:
+
+  - Mouse over the center card
+  - Use key `ArrowUp` and `ArrowDown`
+  - Tap the center card & tap outside the center card (Mobile)
 
 ## Project Tree
 
@@ -109,34 +135,35 @@ npm install --global yarn
 
 ## NPM Packages
 
-#### package.json
+#### packages
 
-```json
-"dependencies": {
-  "core-js": "^3.6.5",
-  "vue": "^2.6.11"
-},
-"devDependencies": {
-  "@tailwindcss/postcss7-compat": "^2.2.4",
-  "@typescript-eslint/eslint-plugin": "^4.18.0",
-  "@typescript-eslint/parser": "^4.18.0",
-  "@vue/cli-plugin-babel": "~4.5.0",
-  "@vue/cli-plugin-eslint": "~4.5.0",
-  "@vue/cli-plugin-typescript": "~4.5.0",
-  "@vue/cli-service": "~4.5.0",
-  "@vue/eslint-config-typescript": "^7.0.0",
-  "autoprefixer": "^9",
-  "eslint": "^6.7.2",
-  "eslint-plugin-vue": "^6.2.2",
-  "node-sass": "^6.0.1",
-  "sass": "~1.32.0",
-  "sass-loader": "^10",
-  "postcss": "^7",
-  "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-  "typescript": "~4.1.5",
-  "vue-svg-loader": "^0.16.0",
-  "vue-template-compiler": "^2.6.14"
-}
+```
+dependencies:
+core-js 3.21.1
+vue 2.6.14
+vue2-touch-events 3.2.2
+
+devDependencies:
+@fortawesome/fontawesome-svg-core 1.3.0
+@fortawesome/free-regular-svg-icons 6.0.0
+@fortawesome/free-solid-svg-icons 6.0.0
+@fortawesome/vue-fontawesome 2.0.6
+@typescript-eslint/eslint-plugin 5.15.0
+@typescript-eslint/parser 5.15.0
+@vue/cli-plugin-babel 5.0.1
+@vue/cli-plugin-eslint 5.0.1
+@vue/cli-plugin-typescript 5.0.1
+@vue/cli-service 5.0.1
+@vue/eslint-config-typescript 9.1.0
+autoprefixer 10.4.2
+eslint 7.32.0
+eslint-plugin-vue 8.5.0
+postcss 8.4.8
+sass 1.49.9
+sass-loader 12.6.0
+tailwindcss 3.0.23
+typescript 4.5.5
+vue-template-compiler 2.6.14
 ```
 
 ## ETC
